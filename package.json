@@ -1,8 +1,10 @@
 {
   "name": "w5-back-got",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "public/js/index.js",
+  "type": "module",
   "scripts": {
+    "start:dev": "node --watch .",
     "build:dev": "tsc -w",
     "build": "tsc",
     "start": "node .",
