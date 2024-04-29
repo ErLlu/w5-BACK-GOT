@@ -5,7 +5,7 @@
   "scripts": {
     "build:dev": "tsc -w",
     "build": "tsc",
-    "start": "serve public",
+    "start": "node .",
     "test": "jest",
     "test:dev": "jest --watchAll",
     "commitlint": "commitlint --edit",
@@ -17,8 +17,8 @@
   "description": "",
   "dependencies": {
     "commitlint": "^19.3.0",
-    "husky": "^9.0.11",
-    "prettier": "^3.2.5"
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -29,6 +29,7 @@
     "eslint-config-xo": "^0.44.0",
     "eslint-config-xo-typescript": "^4.0.0",
     "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
     "typescript": "^5.4.5"
   }
 }
