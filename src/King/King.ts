@@ -5,19 +5,15 @@ export class King extends Character {
 
   constructor(
     name: string,
-    familyName: string,
+    lastName: string,
     age: number,
     yearsOfReign: number,
   ) {
-    super(name, familyName, age);
+    super(name, lastName, age);
     this.yearsOfReign = yearsOfReign;
   }
 
-  public speak() {
+  speak() {
     return "Vais a morir todos";
-  }
-
-  public die() {
-    this.isAlive = false;
   }
 }
