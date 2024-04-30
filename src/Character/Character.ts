@@ -13,11 +13,11 @@ export class Character {
     this.age = age;
   }
 
-  private die() {
-    this.isAlive = false;
+  public speak() {
+    return "";
   }
 
-  private speak() {
-    return "";
+  private die() {
+    this.isAlive = false;
   }
 }
