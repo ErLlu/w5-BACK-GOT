@@ -1,23 +1,19 @@
-/* eslint-disable @typescript-eslint/parameter-properties */
-import { CharacterStructure } from "./types";
-
-export class Character {
-  public name: string;
-  public lastName: string;
-  public age: number;
+export abstract class Character {
   public isAlive = true;
 
-  public constructor(name: string, lastName: string, age: number) {
+  constructor(
+    public name: string,
+    public lastName: string,
+    public age: number,
+  ) {
     this.name = name;
     this.lastName = lastName;
     this.age = age;
   }
 
-  public speak() {
-    return "";
-  }
-
-  private die() {
+  public die(): void {
     this.isAlive = false;
   }
+
+  public abstract speak(): string;
 }
