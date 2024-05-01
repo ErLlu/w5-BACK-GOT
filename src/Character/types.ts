@@ -21,8 +21,8 @@ export interface CharacterBasic {
 
 export interface CharacterStructure {
   isAlive: boolean;
-  message: () => string;
-  die: () => boolean;
+  speak: () => string;
+  die: () => void;
 }
 
 export interface KingStructre extends CharacterStrucure {

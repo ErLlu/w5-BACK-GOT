@@ -5,17 +5,12 @@ import { type FighterStructure } from "../Character/types";
 import { type CharacterBasic } from "../Character/types";
 
 export class Squire extends Character implements SquireStructure {
-  public characterWhomItServes: FighterStructure;
-  public flatteryLevel: Level;
-
-  public constructor(
-    character: CharacterBasic,
-    characterWhomItServes: FighterStructure,
-    flatteryLevel: Level,
+  constructor(
+    { name, lastName, age }: CharacterBasic,
+    public characterWhomItServes: FighterStructure,
+    public flatteryLevel: Level,
   ) {
-    super(character.name, character.lastName, character.age);
-    this.characterWhomItServes = characterWhomItServes;
-    this.flatteryLevel = flatteryLevel;
+    super(name, lastName, age);
   }
 
   speak() {
