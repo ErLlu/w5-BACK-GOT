@@ -1,6 +1,7 @@
 import { King } from "./King/King.js";
 import { Fighter } from "./Fighter/Fighter.js";
 import { Squire } from "./Squire/Squire.js";
+import { Adviser } from "./Adviser/Adviser.js";
 
 const joffreyBaratheon = new King("Joffrey", "Baratheon", 14, 2);
 
@@ -21,3 +22,16 @@ const bronn = new Squire(
   jaimeLannister,
   8,
 );
+
+const tyronLannister = new Adviser(
+  { name: "Tyron", lastName: "Lannister", age: 30 },
+  daenerysTargaryen,
+);
+
+export const characters = [
+  joffreyBaratheon,
+  jaimeLannister,
+  daenerysTargaryen,
+  bronn,
+  tyronLannister,
+];
