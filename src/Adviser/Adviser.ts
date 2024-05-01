@@ -6,13 +6,11 @@ import {
 import { Character } from "../Character/Character";
 
 export class Adviser extends Character implements AdviserStructure {
-  public characterWhomItAdvise: CharacterStructure;
-
-  public constructor(
-    character: CharacterBasic,
-    characterWhomItAdvise: Character,
+  constructor(
+    { name, lastName, age }: CharacterBasic,
+    public characterWhomItAdvise: Character,
   ) {
-    super(character.name, character.lastName, character.age);
+    super(name, lastName, age);
   }
 
   speak() {
