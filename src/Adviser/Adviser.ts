@@ -2,8 +2,8 @@ import {
   type CharacterStructure,
   type AdviserStructure,
   type CharacterBasic,
-} from "../Character/types";
-import { Character } from "../Character/Character";
+} from "../Character/types.js";
+import { Character } from "../Character/Character.js";
 
 export class Adviser extends Character implements AdviserStructure {
   constructor(
