@@ -2,6 +2,9 @@ import { King } from "./King/King.js";
 import { Fighter } from "./Fighter/Fighter.js";
 import { Squire } from "./Squire/Squire.js";
 import { Adviser } from "./Adviser/Adviser.js";
+import express, { type Response } from "express";
+import { type Character } from "./Character/Character.js";
+import { type Characters } from "./Character/types.js";
 
 const joffreyBaratheon = new King("Joffrey", "Baratheon", 14, 2);
 
@@ -28,10 +31,30 @@ const tyronLannister = new Adviser(
   daenerysTargaryen,
 );
 
-export const characters = [
+export const characters: Character[] = [
   joffreyBaratheon,
   jaimeLannister,
   daenerysTargaryen,
   bronn,
   tyronLannister,
 ];
+
+const app = express();
+
+app.listen(4000, () => {
+  console.log("Server listening on 'http://localhost:4000/'");
+});
+
+app.get("/characters", (_req, res: Response<Characters>) => {
+  res.status(200).json({ characters });
+});
+
+app.use((_req, res) => {
+  res.status(404).json({ error: "page not found" });
+});
+
+app.use((_req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  next();
+});
