@@ -5,6 +5,7 @@ import { Adviser } from "./Adviser/Adviser.js";
 import express, { type Response } from "express";
 import { type Character } from "./Character/Character.js";
 import { type Characters } from "./Character/types.js";
+import cors from "cors";
 
 const joffreyBaratheon = new King("Joffrey", "Baratheon", 14, 2);
 
@@ -45,16 +46,12 @@ app.listen(4000, () => {
   console.log("Server listening on 'http://localhost:4000/'");
 });
 
+app.use(cors());
+
 app.get("/characters", (_req, res: Response<Characters>) => {
   res.status(200).json({ characters });
 });
 
 app.use((_req, res) => {
   res.status(404).json({ error: "page not found" });
-});
-
-app.use((_req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-
-  next();
 });
